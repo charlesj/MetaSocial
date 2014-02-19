@@ -8,45 +8,45 @@ class basicPackages {
 	}
 
 	package {"python-software-properties":
-		ensure => present,
+		ensure => "latest",
 		before => Package["software-properties-common"]
 	}
 
 	package {"software-properties-common":
-		ensure => present,
+		ensure => "latest",
 		before => Apt::Ppa["ppa:directhex/monoxide"],
 	}
 
 	package { "make":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "libtool":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "automake":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "autoconf":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "git-core":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "g++":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "gettext":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	package { "pkg-config":
-		ensure => present,
+		ensure => "latest",
 	}
 
 	apt::ppa { 'ppa:directhex/monoxide':
@@ -54,8 +54,14 @@ class basicPackages {
 	}
 
 	package{"mono-complete":
-		ensure => present,
+		ensure => "latest",
 	}
+
+	package{"albacore":
+		ensure => "latest",
+		provider => 'gem',
+	}
+
 }
 
 include basicPackages
