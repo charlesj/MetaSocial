@@ -62,6 +62,7 @@ class basicPackages {
 		provider => 'gem',
 	}
 
+	class { 'nginx': }
 }
 
 include basicPackages
